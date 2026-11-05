@@ -1,0 +1,547 @@
+
+/* ==========================================
+   SANSOM ANALYTICS
+   Main Stylesheet
+   ========================================== */
+
+/* COLOURS */
+
+:root {
+    --background: #0f172a;
+    --background-alt: #111e33;
+    --card-background: #1e293b;
+    --accent: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: #334155;
+}
+
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.header-content {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.site-header nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.site-header nav a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+.hero {
+    padding: 105px 0 110px;
+    background:
+        radial-gradient(
+            ellipse at 80% 20%,
+            rgba(56, 189, 248, 0.10),
+            transparent 50%
+        ),
+        var(--background);
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 750;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    max-width: 850px;
+    margin: 0 0 28px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 740px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0 0 36px;
+}
+
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    background: var(--accent);
+    color: #0f172a;
+    padding: 13px 26px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   SECTIONS
+   ========================================== */
+
+.section {
+    padding: 85px 0;
+}
+
+.section.alternate {
+    background: var(--background-alt);
+}
+
+.section h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+    margin: 0 0 26px;
+}
+
+.section-description {
+    max-width: 820px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.85;
+    margin: 0 0 20px;
+}
+
+/* ==========================================
+   EXPERTISE CARDS
+   ========================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 38px;
+}
+
+.card {
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.card-icon {
+    color: var(--accent);
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--text);
+    font-size: 19px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ==========================================
+   INDUSTRY IMAGES & CARDS
+   ========================================== */
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 950px;
+    margin: 40px auto 0;
+}
+
+.industry-card {
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.industry-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.industry-card img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.industry-card h3 {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.4;
+    padding: 0 20px;
+    margin: 20px 0 12px;
+}
+
+.industry-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0 20px 22px;
+    margin: 0;
+}
+
+/* ==========================================
+   SOFTWARE SECTION
+   ========================================== */
+
+.software-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-top: 32px;
+}
+
+.software-panel h3 {
+    color: var(--text);
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.software-panel p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.status {
+    display: inline-block;
+    flex-shrink: 0;
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.10);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   CONTACT
+   ========================================== */
+
+.contact-email {
+    margin-top: 28px;
+}
+
+.contact-email a {
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-email a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.site-footer {
+    background: #0b1220;
+    border-top: 1px solid var(--border);
+    padding: 25px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ==========================================
+   TABLETS
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .industry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 85px 0;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .site-header nav {
+        gap: 16px;
+    }
+}
+
+/* ==========================================
+   MOBILE PHONES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    /* Header */
+
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 0;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .site-header nav {
+        justify-content: center;
+        gap: 10px 16px;
+    }
+
+    .site-header nav a {
+        font-size: 12px;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding: 65px 0 75px;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 42px);
+        letter-spacing: -0.8px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .button {
+        padding: 12px 22px;
+    }
+
+    /* Sections */
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .section-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* Expertise cards */
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    /* Industry images */
+
+    .industry-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .industry-card img {
+        height: 190px;
+    }
+
+    /* Software */
+
+    .software-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    /* Contact */
+
+    .contact-email a {
+        font-size: 16px;
+    }
+
+    /* Footer */
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
