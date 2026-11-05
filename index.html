@@ -284,9 +284,7 @@
             </p>
 
             <p class="contact-email">
-                <a href="mailto:ahmos.sansom@sansom-analytics.co.uk">
-                    ahmos.sansom@sansom-analytics.co.uk
-                </a>
+                <a id="contact-link">Email Sansom Analytics</a>
             </p>
 
         </div>
@@ -338,6 +336,15 @@
 <script>
     document.getElementById("year").textContent =
         new Date().getFullYear();
+</script>
+
+<script>
+    const user = "ahmos.sansom";
+    const domain = "sansom-analytics.co.uk";
+
+    const link = document.getElementById("contact-link");
+
+    link.href = "mailto:" + user + "@" + domain;
 </script>
 
 </body>
